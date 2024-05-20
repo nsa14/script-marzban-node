@@ -169,6 +169,9 @@ install_docker(){
 		        echo "
 █▄▄ █▄█
 █▄█ ░█░ Script terminated by the user 👋"
+echo""
+echo""
+echo""
 		        exit 0
 		        ;;
 		    * ) 
