@@ -84,7 +84,7 @@ update_upgrade_server() {
         	reboot
 		            # exit 0
 		else
-			echo "no updates! 👍"
+			echo "no updates! is OK👍"
 			echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 			check_docker
 		            # exit 0
