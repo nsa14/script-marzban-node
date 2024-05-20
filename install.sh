@@ -105,20 +105,38 @@ check_docker(){
 }
 
 install_docker(){
+	echo "  "
     echo "  🆂🆃🅰🆁🆃 install docker "
+    echo "  "
     echo " please do not reboot or close. please wait ..."
-    curl -fsSL https://get.docker.com | sh || { echo "Something went wrong! did you interupt the docker update? then no problem - Are you trying to install Docker on an IR server? try setting DNS."; }
-    # var_install_docker=$(curl -fsSL https://get.docker.com | sh) & spinner3
+    # curl -fsSL https://get.docker.com | sh & spinner3 || { echo "Something went wrong! did you interupt the docker update? then no problem - Are you trying to install Docker on an IR server? try setting DNS."; }
+    var_install_docker=$(curl -fsSL https://get.docker.com | sh) & spinner3
 
-    # if echo $var_install_docker | grep -q "Syntax OK"; then
-    #     echo " 🅳🅾🅲🅺🅴🆁 🅸🆂 🅾🅺 .continue ..."
-    #     echo ""
-    #     echo ""
-    # else
-    #     echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue"
-    #     echo "please fix error and run again script  "
-    #     rtt_instller
-    # fi
+    if echo $var_install_docker | grep -q "Syntax OK"; then
+        echo " 🅳🅾🅲🅺🅴🆁 🅸🆂 🅾🅺 .continue ..."
+        echo ""
+        echo ""
+    else
+        echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue"
+        echo "please you fixed error."
+	        read -rp "Do you want to run again? (Y/n): " consent
+	        case "$consent" in
+		    [Yy]* ) 
+		        echo "Proceeding run again the script..."
+		        rtt_instller
+		        ;;
+		    [Nn]* ) 
+		        echo "Script terminated by the user."
+		        exit 0
+		        ;;
+		    * ) 
+		        echo "Invalid input. Script will exit."
+		        exit 1
+		        ;;
+			esac
+
+        
+    fi
     exit 1;
 }
 
