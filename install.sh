@@ -81,10 +81,14 @@ update_upgrade_server() {
 		    # Some commands
 	        echo "updates available..."
 	       	apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
-	       	
+
 	       	read -p "needed to reboot server. are you ok? (Y/n): $q? " -r consent_reboot
 		    case $consent_reboot in
 		        [Yy]*) reboot;;
+				*) 
+				echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+				check_docker
+				;;
 		    esac
 
    #      	read -rp "needed to reboot server. are you ok? (Y/n): " consent_reboot
