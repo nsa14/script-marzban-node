@@ -10,6 +10,8 @@
     bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
    ```
 
+   <br>
+   <br>
    
 * این اسکریپت دقیقا مطابق با راه اندازی نود در مرزبان که داکیومنت آن در لینک زیر می باشد استفاده میکند
 

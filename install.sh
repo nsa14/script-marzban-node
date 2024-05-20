@@ -75,7 +75,6 @@ update_upgrade_server() {
 ▄█
 ░█ 🆂🆃🅰🆁🆃 checked update and upgrade OS"
         echo "  "
-    echo "  "
     updates=$(apt list upgradeable |& grep -Ev '^(Listing|WARNING)') 
         if [${updates} ]; then
             echo "updates available"
@@ -94,7 +93,6 @@ check_docker(){
 
 ▀█
 █▄ 🆂🆃🅰🆁🆃 checked docker"
-    echo "   "
     echo "  "
     if [[ $(docker -v) == *" 26.1."* ]]; then
         echo "docker is OK" & spinner3
@@ -108,7 +106,7 @@ install_docker(){
 	echo "  "
     echo "  🆂🆃🅰🆁🆃 install docker "
     echo "  "
-    echo " please do not reboot or close. please wait ..."
+    echo " please do not reboot or close. please wait ... 🙏"
     # curl -fsSL https://get.docker.com | sh & spinner3 || { echo "Something went wrong! did you interupt the docker update? then no problem - Are you trying to install Docker on an IR server? try setting DNS."; }
     var_install_docker=$(curl -fsSL https://get.docker.com | sh) & spinner3
 
@@ -117,8 +115,8 @@ install_docker(){
         echo ""
         echo ""
     else
-        echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue"
-        echo "please you fixed error."
+        echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue 😕"
+        echo "please you fixed error. Are you trying to install Docker on an IRAN server? try setting DNS."
 	        read -rp "Do you want to run again? (Y/n): " consent
 	        case "$consent" in
 		    [Yy]* ) 
@@ -128,7 +126,7 @@ install_docker(){
 		    [Nn]* ) 
 		        echo "
 █▄▄ █▄█
-█▄█ ░█░ Script terminated by the user."
+█▄█ ░█░ Script terminated by the user 👋"
 		        exit 0
 		        ;;
 		    * ) 
@@ -261,7 +259,6 @@ composer_compile(){
 
 █▄▄
 █▄█ 🆂🆃🅰🆁🆃 compile docker compose "
-    echo ""
     echo ""
     echo "start docker compose container. please wait..."
     sudo systemctl restart docker
