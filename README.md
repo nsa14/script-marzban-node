@@ -6,7 +6,7 @@
 
  کد اجرای دستور در کامند لینوکس :
 
-   ```sh 
+   ```
     bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
    ```
 
@@ -45,6 +45,7 @@
 
 >2 -  در مرحله 5 شما باید کد سرتیفیکت مربوط به نود را از پنل مرزبان خود کپی کرده و در این مرحله paste نمایید. عکس 
 > زیر نمونه می باشد
+> 
 > ![certificate_panel.png](certificate_panel.png)
 
 >3 -  نکته: بعد از جایگذاری سرتیفیکت برای ادامه کار enter بزنید
@@ -57,8 +58,11 @@
 > ![buttonUpdate.png](buttonUpdate.png)
 
 
-> [!CAUTION]
-> میتواند محتویات فایل های نود(docker-compose.yml, ssl_client_cert.pem ) را در صورت نیاز ویرایش نمایید
+<div dir="rtl">
+
+> + میتواند محتویات فایل های نود(docker-compose.yml, ssl_client_cert.pem ) را در صورت نیاز ویرایش نمایید
+
+</div>
 
 
 </div>
