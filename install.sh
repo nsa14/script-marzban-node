@@ -76,7 +76,7 @@ update_upgrade_server() {
 ░█ 🆂🆃🅰🆁🆃 checked update and upgrade OS"
         echo "  "
 
-    updates=/etc/update-motd.d/90-updates-available
+    updates=/usr/lib/update-notifier/apt-check
         if (( updates == 0 )); then
         	echo "no updates!"
             exit 0
