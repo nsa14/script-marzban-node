@@ -81,7 +81,25 @@ update_upgrade_server() {
 		    # Some commands
 	        echo "updates available..."
 	       	apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
-        	reboot
+        		        read -rp "needed to reboot server. are you ok? (Y/n): " consent1
+	        case "$consent1" in
+		    [Yy]* ) 
+		        reboot
+		        ;;
+		    [Nn]* ) 
+		        echo "
+█▄▄ █▄█
+█▄█ ░█░ Script terminated by the user 👋"
+		        exit 0
+		        ;;
+		    * ) 
+		        echo "Invalid input. Script will exit."
+		        exit 0
+		        ;;
+			esac
+
+        
+    fi
 		            # exit 0
 		else
 			echo "no updates! is OK  👍"
