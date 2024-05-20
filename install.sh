@@ -122,11 +122,13 @@ install_docker(){
 	        read -rp "Do you want to run again? (Y/n): " consent
 	        case "$consent" in
 		    [Yy]* ) 
-		        echo "Proceeding run again the script..."
+		        echo "Proceeding run again the script... 👍"
 		        rtt_instller
 		        ;;
 		    [Nn]* ) 
-		        echo "Script terminated by the user."
+		        echo "
+█▄▄ █▄█
+█▄█ ░█░ Script terminated by the user."
 		        exit 0
 		        ;;
 		    * ) 
