@@ -76,7 +76,7 @@ update_upgrade_server() {
 ░█ 🆂🆃🅰🆁🆃 checked update and upgrade OS"
         echo "  "
 
-    updates='/etc/update-motd.d/90-updates-available'
+    updates=/etc/update-motd.d/90-updates-available
         if (( updates == 0 )); then
             echo "updates available"
             exit 0
