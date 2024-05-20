@@ -50,7 +50,7 @@
  کد اجرای دستور در کامند لینوکس :
 
    ```sh
-      bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/configMarzbanNode/master/install.sh)
+      bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
    ```
  
 <br>
