@@ -78,15 +78,15 @@ update_upgrade_server() {
 
     updates=/etc/update-motd.d/90-updates-available
         if (( updates == 0 )); then
+        	echo "no updates!"
+            exit 0
+            echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+            # check_docker
+            else
             echo "updates available"
             exit 0
             apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
-            reboot
-            else
-            echo "no updates!"
-            exit 0
-            echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
-            check_docker
+            # reboot
         fi
 
 }
