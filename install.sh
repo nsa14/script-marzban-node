@@ -84,7 +84,7 @@ update_upgrade_server() {
         	reboot
 		            # exit 0
 		else
-			echo "no updates! is OK👍"
+			echo "no updates! is OK  👍"
 			echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 			check_docker
 		            # exit 0
@@ -138,7 +138,7 @@ install_docker(){
         echo ""
     else
         echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue 😕"
-        echo "please you fixed error. Are you trying to install Docker on an IRAN server? try setting DNS."
+        echo $RED; "please you fixed error. Are you trying to install Docker on an IRAN server? try setting DNS."
 	        read -rp "Do you want to run again? (Y/n): " consent
 	        case "$consent" in
 		    [Yy]* ) 
