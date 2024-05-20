@@ -96,9 +96,6 @@ update_upgrade_server() {
 		        reboot
 		        ;;
 			esac
-
-        
-    fi
 		            # exit 0
 		else
 			echo "no updates! is OK  👍"
