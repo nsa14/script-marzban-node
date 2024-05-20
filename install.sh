@@ -156,7 +156,8 @@ install_docker(){
         echo ""
     else
         echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue 😕"
-        echo $RED; "please you fixed error. Are you trying to install Docker on an IRAN server? try setting DNS."; echo $RESET
+        echo $RED; "please you fixed error. Are you trying to install Docker on an IRAN server? try setting DNS." 
+        echo $RESET
         echo ""
 	        read -rp "Do you want to try again? (Y/n): " consent
 	        case "$consent" in
