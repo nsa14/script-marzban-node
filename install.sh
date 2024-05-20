@@ -86,14 +86,11 @@ update_upgrade_server() {
 		    [Yy]* ) 
 		        reboot
 		        ;;
-		    [Nn]* ) 
+		    * ) 
 		        echo "
 █▄▄ █▄█
 █▄█ ░█░ Script terminated by the user 👋"
 		        exit 0
-		        ;;
-		    * ) 
-		        reboot
 		        ;;
 			esac
 		            # exit 0
