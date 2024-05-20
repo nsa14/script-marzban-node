@@ -14,6 +14,7 @@
 
 
 * سیستم عامل پیشنهادی : ubuntu 22
+* لوکیشن : ترجیحا هر جایی بغیر از سرورهای داخلی
 
 <hr>
  * حتما سرور خود را از قبل آپدیت و اپگرید و در انتها آنرا ریبوت نمایید
@@ -49,8 +50,7 @@
 
  کد اجرای دستور در کامند لینوکس :
 
-   ```sh
-      bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
+   ```sh bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
    ```
  
 <br>
