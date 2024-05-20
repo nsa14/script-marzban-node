@@ -76,18 +76,26 @@ update_upgrade_server() {
 ░█ 🆂🆃🅰🆁🆃 checked update and upgrade OS"
         echo "  "
 
-    updates=$(/usr/lib/update-notifier/apt-check |& cut -d";" -f 1)
-        if (( updates == 0 )); then
-        	echo "no updates!"
+    # updates=$(/usr/lib/update-notifier/apt-check |& cut -d";" -f 1)
+    if [ $(/usr/lib/update-notifier/apt-check |& cut -d";" -f 1) -gt 0 ]; then
+    # Some commands
+        echo "updates available"
             exit 0
-            echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
-            # check_docker
-            else
-            echo "updates available"
+else
+	echo "no updates!"
             exit 0
-            apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
-            # reboot
-        fi
+fi
+        # if (( updates == 0 )); then
+        # 	echo "no updates!"
+        #     exit 0
+        #     echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+        #     # check_docker
+        #     else
+        #     echo "updates available"
+        #     exit 0
+        #     apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
+        #     # reboot
+        # fi
 
 }
 
