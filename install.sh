@@ -76,7 +76,7 @@ update_upgrade_server() {
 ░█ 🆂🆃🅰🆁🆃 checked update and upgrade OS"
         echo "  "
 
-    updates=$(/usr/lib/update-notifier/apt-check)
+    updates=$(/usr/lib/update-notifier/apt-check |& cut -d";" -f 1)
         if (( updates == 0 )); then
         	echo "no updates!"
             exit 0
