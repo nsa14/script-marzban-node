@@ -78,10 +78,12 @@ update_upgrade_server() {
     updates=$(apt list upgradeable |& grep -Ev '^(Listing|WARNING)') 
         if [${updates} ]; then
             echo "updates available"
+            exit 0
             apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
             reboot
             else
             echo "no updates!"
+            exit 0
             echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
             check_docker
         fi
@@ -94,25 +96,31 @@ check_docker(){
 ▀█
 █▄ 🆂🆃🅰🆁🆃 checked docker"
     echo "  "
-    if [[ $(docker -v) == *" 26.1."* ]]; then
-        echo "docker is OK" & spinner3
+    if ! command -v docker &> /dev/null
+	then
+	    install_docker
+	    else
+	    echo "docker is OK" & spinner3
         echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
-    else 
-        install_docker
-    fi
+	fi
+    # if [[ $(docker -v) == *" 26.1."* ]]; then
+    #     echo "docker is OK" & spinner3
+    #     echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+    # else 
+    #     install_docker
+    # fi
 }
 
 install_docker(){
 	echo "  "
     echo "  🆂🆃🅰🆁🆃 install docker "
     echo "  "
-    echo " please do not reboot or close. please wait ... 🙏"
+    echo " please do not reboot or close. please wait ..."
     # curl -fsSL https://get.docker.com | sh & spinner3 || { echo "Something went wrong! did you interupt the docker update? then no problem - Are you trying to install Docker on an IR server? try setting DNS."; }
     var_install_docker=$(curl -fsSL https://get.docker.com | sh) & spinner3
 
     if echo $var_install_docker | grep -q "Syntax OK"; then
         echo " 🅳🅾🅲🅺🅴🆁 🅸🆂 🅾🅺 .continue ..."
-        echo ""
         echo ""
     else
         echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue 😕"
