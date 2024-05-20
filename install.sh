@@ -87,7 +87,7 @@ update_upgrade_server() {
 		        [Yy]*) reboot;;
 				*) 
 				echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
-				check_docker
+				check_docker 
 				;;
 		    esac
 
