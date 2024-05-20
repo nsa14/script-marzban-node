@@ -76,9 +76,8 @@ update_upgrade_server() {
 ░█ 🆂🆃🅰🆁🆃 checked update and upgrade OS"
         echo "  "
 
-    updates=/etc/update-motd.d/90-updates-available
-    echo "${updates}";
-        if [${updates} == 0]; then
+    updates='/etc/update-motd.d/90-updates-available'
+        if (( updates == 0 )); then
             echo "updates available"
             exit 0
             apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
