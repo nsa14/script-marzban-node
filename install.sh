@@ -93,8 +93,7 @@ update_upgrade_server() {
 		        exit 0
 		        ;;
 		    * ) 
-		        echo "Invalid input. Script will exit."
-		        exit 0
+		        reboot
 		        ;;
 			esac
 
