@@ -3,6 +3,14 @@
 <h2>
 راه اندازی مرزبان نود در سرور در راحتترین روش
 </h2>
+
+ کد اجرای دستور در کامند لینوکس :
+
+   ```sh 
+    bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
+   ```
+
+   
 * این اسکریپت دقیقا مطابق با راه اندازی نود در مرزبان که داکیومنت آن در لینک زیر می باشد استفاده میکند
 
    ```sh
@@ -46,12 +54,6 @@
 > ![buttonUpdate.png](buttonUpdate.png)
 
 
-
-
- کد اجرای دستور در کامند لینوکس :
-
-   ```sh bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
-   ```
  
 <br>
 
