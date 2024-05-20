@@ -81,15 +81,21 @@ update_upgrade_server() {
 		    # Some commands
 	        echo "updates available..."
 	       	apt-get update; apt-get upgrade -y; apt-get install curl socat git -y; apt-get install curl socat git -y & spinner3
-        	read -rp "needed to reboot server. are you ok? (Y/n): " consent_reboot
-	        case "$consent_reboot" in
-		    [Yy]* ) 
-		        reboot
-		        ;;
-		    * ) 
-				exit 1
-		        ;;
-			esac
+	       	
+	       	read -p "needed to reboot server. are you ok? (Y/n): $q? " -r consent_reboot
+		    case $consent_reboot in
+		        [Yy]*) reboot;;
+		    esac
+
+   #      	read -rp "needed to reboot server. are you ok? (Y/n): " consent_reboot
+	  #       case "$consent_reboot" in
+		 #    [Yy]* ) 
+		 #        reboot
+		 #        ;;
+		 #    * ) 
+			# 	exit 1
+		 #        ;;
+			# esac
 		            # exit 0
 		else
 			echo "no updates! is OK  👍"
