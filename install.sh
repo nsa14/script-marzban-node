@@ -8,6 +8,7 @@ echo "
 ██║╚██╔╝██║██╔══██║██╔══██╗██╔══╝░░██╔══██╗██╔══██║██║╚████║  ██║╚████║██║░░██║██║░░██║██╔══╝░░
 ██║░╚═╝░██║██║░░██║██║░░██║███████╗██████╦╝██║░░██║██║░╚███║  ██║░╚███║╚█████╔╝██████╔╝███████╗
 ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝  ╚═╝░░╚══╝░╚════╝░╚═════╝░╚══════╝ "
+echo ""
 echo "***** https://github.com/nsa14/script-marzban-node *****"
 echo "***** write by Naser.Zare *****"
 echo
@@ -102,7 +103,7 @@ update_upgrade_server() {
 			# esac
 		            # exit 0
 		else
-			echo "no updates! is OK  👍"
+			echo "no updates! is 🅾🅺  👍"
 			echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 			check_docker
 		            # exit 0
@@ -132,7 +133,7 @@ check_docker(){
 	then
 	    install_docker
 	    else
-	    echo "docker is OK" & spinner3
+	    echo " docker is 🅾🅺 " & spinner3
         echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 	fi
     # if [[ $(docker -v) == *" 26.1."* ]]; then
@@ -148,11 +149,12 @@ install_docker(){
     echo "  🆂🆃🅰🆁🆃 install docker "
     echo "  "
     echo " please do not reboot or close. please wait ..."
+    sudo echo nameserver 8.8.8.8 > /etc/resolv.conf
     # curl -fsSL https://get.docker.com | sh & spinner3 || { echo "Something went wrong! did you interupt the docker update? then no problem - Are you trying to install Docker on an IR server? try setting DNS."; }
     var_install_docker=$(curl -fsSL https://get.docker.com | sh) & spinner3
 
     if echo $var_install_docker | grep -q "Syntax OK"; then
-        echo " 🅳🅾🅲🅺🅴🆁 🅸🆂 🅾🅺 .continue ..."
+        echo " 🅳🅾🅲🅺🅴🆁 🅸🆂 🅾🅺"
         echo ""
     else
         echo "【﻿ｅｒｒｏｒ】 Install docker. i can't continue 😕"
@@ -195,7 +197,7 @@ initial_node(){
     # if  Marzban-node exist only remove docker
         # [ ! -d "/etc/" ] && echo "Not Found" || echo "Found."
         if [ ! -d /root/Marzban-node ]; then
-            echo "niiiiiistt mazrban-node"
+            # echo "niiiiiistt mazrban-node"
             git clone https://github.com/Gozargah/Marzban-node
             mkdir /var/lib/marzban-node
             # mkdir /root/Marzban-node
@@ -208,7 +210,7 @@ initial_node(){
              fi
         fi
 
-        echo "initial is OK"
+        echo "initial is 🅾🅺 "
         echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 
 }
@@ -233,7 +235,7 @@ echo -e "services:
     volumes:
       - /var/lib/marzban-node:/var/lib/marzban-node" > /root/Marzban-node/docker-compose.yml
       echo ""
-      echo "docker compose is OK"
+      echo "docker compose is 🅾🅺 "
       echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
 
 }
@@ -293,7 +295,7 @@ set_client_cert(){
     # echo "$certificate_code" 
     echo -e "$certificate_code" > /var/lib/marzban-node/ssl_client_cert.pem
 
-    echo "set client cert is OK"
+    echo " client cert set is 🅾🅺 "
     echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
     # sleep 1;
     composer_compile & spinner3
@@ -310,7 +312,7 @@ composer_compile(){
     cd /root/Marzban-node/
     docker compose up -d & spinner3
     echo ""
-    echo "docker compile is OK"
+    echo "docker compile is 🅾🅺 "
     echo $GREEN; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
     # printf %"$COLUMNS"s |tr " " "-"
 
@@ -322,6 +324,7 @@ for i in {001..100}; do
     printf "\r $i"
 done
 }
+
 show_spinner2(){
 /usr/bin/scp me@website.com:file somewhere 2>/dev/null &
 pid=$! # Process Id of the previous running command
@@ -402,7 +405,7 @@ progreSh() {
 }
 
 
-valid_os
+# valid_os
 update_upgrade_server
 # check_docker
 # install_docker
