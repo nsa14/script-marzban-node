@@ -308,7 +308,11 @@ composer_compile(){
 █▄█ 🆂🆃🅰🆁🆃 compile docker compose "
     echo ""
     echo "start docker compose container. please wait..."
+
+    sleep 1
     sudo systemctl restart docker
+    sleep 1
+    sleep 1
     cd /root/Marzban-node/
     docker compose up -d & spinner3
     echo ""
