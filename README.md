@@ -4,8 +4,8 @@
 راه اندازی مرزبان نود در سرور به راحت ترین روش
 </h2>
 
-```bash
-<tab><tab>bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
+```sh
+bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
 
  کد اجرای دستور در کامند لینوکس :
 
