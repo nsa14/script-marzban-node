@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html>
+<body>
+
 # welcome
 <div dir="rtl">
 <h2>
@@ -85,3 +89,6 @@ function copy_password() {
     textArea.remove();
 }
 </script>
+</body>
+</html>
+
