@@ -76,7 +76,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/ma
 
 </div>
 
-<script>
+```js
 document.getElementById("cp_btn").addEventListener("click", copy_password);
 
 function copy_password() {
@@ -88,7 +88,7 @@ function copy_password() {
     document.execCommand("Copy");
     textArea.remove();
 }
-</script>
+```
 </body>
 </html>
 
