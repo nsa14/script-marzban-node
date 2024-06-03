@@ -6,7 +6,7 @@
 
 ```sh
 bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
-
+```
  کد اجرای دستور در کامند لینوکس :
 
    ```
