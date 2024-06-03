@@ -10,6 +10,10 @@
 ```sh
 bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)
 ```
+<span id="pwd_spn" class="password-span">bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/master/install.sh)</span>
+<button id="cp_btn">Copy</button>
+
+
 
    <br>
    <br>
@@ -67,3 +71,17 @@ bash <(curl -fsSL https://raw.githubusercontent.com/nsa14/script-marzban-node/ma
 
 
 </div>
+
+<script>
+document.getElementById("cp_btn").addEventListener("click", copy_password);
+
+function copy_password() {
+    var copyText = document.getElementById("pwd_spn");
+    var textArea = document.createElement("textarea");
+    textArea.value = copyText.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+}
+</script>
